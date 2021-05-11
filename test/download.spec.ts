@@ -26,12 +26,10 @@ describe("action", () => {
   test("should download multiwerf", async () => {
     await download("1.4.7")
 
+    const binary = os.platform() === "win32" ? "multiwerf.exe" : "multiwerf"
+
     const access = async () => {
-      if (os.platform() === "win32") {
-        await fs.access(path.join(tmpDir.path, "cache/multiwerf/1.4.7.exe", os.arch()), fsSync.constants.X_OK)
-      } else {
-        await fs.access(path.join(tmpDir.path, "cache/multiwerf/1.4.7", os.arch()), fsSync.constants.X_OK)
-      }
+      await fs.access(path.join(tmpDir.path, "cache/multiwerf/1.4.7", os.arch(), binary), fsSync.constants.X_OK)
     }
 
     expect(access).not.toThrow()
