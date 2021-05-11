@@ -12,5 +12,5 @@ runs:
   main: dist/index.js
 
 branding:
-  icon: 'delete'
-  color: 'green'
+  icon: download-cloud
+  color: blue
