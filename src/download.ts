@@ -4,7 +4,7 @@ import { promises as fs } from "fs"
 
 const DOWNLOAD_URL = "https://storage.yandexcloud.net/multiwerf/targets/releases"
 
-export default async function download(version: string) {
+export default async function download(version: string): Promise<void> {
   const multiwerfPath = await downloadOrGetFromCache(version)
 
   switch (process.platform) {
