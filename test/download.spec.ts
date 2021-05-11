@@ -2,6 +2,7 @@ import fsSync, { promises as fs } from "fs"
 import path from "path"
 import os from "os"
 import tmp, { DirectoryResult } from "tmp-promise"
+import semver from "semver"
 import download from "../src/download"
 
 describe("action", () => {
@@ -15,7 +16,11 @@ describe("action", () => {
   })
 
   afterEach(async () => {
-    await fs.rm(tmpDir.path, { recursive: true })
+    if (semver.gte(process.version, "14.14.0")) {
+      await fs.rm(tmpDir.path, { recursive: true })
+    } else {
+      await fs.rmdir(tmpDir.path, { recursive: true })
+    }
   })
 
   test("should download multiwerf", async () => {
