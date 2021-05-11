@@ -6,7 +6,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-latest, windows-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -30,6 +33,7 @@ jobs:
 
       - run: yarn install
       - run: yarn lint
+      - run: yarn test
 
       - if: github.ref == 'refs/heads/main'
         run: yarn build
