@@ -22,6 +22,7 @@ export default async function download(version: string): Promise<void> {
   )
 
   core.addPath(cachedPath)
+  core.info("Successfully added to path and cache.")
 }
 
 async function downloadOrGetFromCache(version: string): Promise<string> {

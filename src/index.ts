@@ -1,8 +1,10 @@
 import { getInput, setFailed } from "@actions/core"
 import download from "./download"
 
+const DEFAULT_VERSION = "1.4.7"
+
 export async function run(): Promise<void> {
-  const version = getInput("multiwerf-version") || "1.4.7"
+  const version = getInput("multiwerf-version") || DEFAULT_VERSION
 
   await download(version)
 }
