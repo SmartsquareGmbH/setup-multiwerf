@@ -1,0 +1,31 @@
+{
+  "name": "setup-multiwerf",
+  "version": "0.1.0",
+  "description": "Github action to install multiwerf",
+  "main": "dist/index.js",
+  "repository": "https://github.com/SmartsquareGmbH/setup-multiwerf",
+  "author": "Ruben Gees",
+  "license": "MIT",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "ncc build src/index.ts --license LICENSE.txt --target es2015 --minify",
+    "lint": "eslint --ext .js,.ts src --max-warnings 0",
+    "lint:fix": "yarn lint --fix"
+  },
+  "dependencies": {
+    "@actions/core": "^1.2.7",
+    "@actions/tool-cache": "^1.6.1"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.2",
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "@vercel/ncc": "^0.28.5",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}

@@ -1,0 +1,16 @@
+name: Setup multiwerf
+
+description: Github action to set up multiwerf
+
+inputs:
+  multiwerf-version:
+    description: The multiwerf version to set up.
+    required: false
+
+runs:
+  using: node12
+  main: dist/index.js
+
+branding:
+  icon: 'delete'
+  color: 'green'

@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "lib": ["es2015"],
+    "moduleResolution": "Node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
