@@ -1,5 +1,8 @@
 # setup-multiwerf
 
+> [!WARNING]
+> Deprecated and unmaintained. See https://github.com/werf/multiwerf.
+
 Github action to install multiwerf.
 
 ### Usage
